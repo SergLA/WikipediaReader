@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		247B2DD51C9824A900FDE06C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B2DD41C9824A900FDE06C /* Helpers.swift */; };
+		247B2DDA1C983F0F00FDE06C /* WikiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B2DD81C983F0F00FDE06C /* WikiListViewController.swift */; };
+		247B2DDB1C983F0F00FDE06C /* WikiPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B2DD91C983F0F00FDE06C /* WikiPageViewController.swift */; };
+		247B2DE01C983F8A00FDE06C /* WikiPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B2DDF1C983F8A00FDE06C /* WikiPage.swift */; };
+		247B2DE51C9841AD00FDE06C /* WikiPagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B2DE41C9841AD00FDE06C /* WikiPagesDataSource.swift */; };
+		247B2DE91C985F4E00FDE06C /* WikiPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B2DE81C985F4E00FDE06C /* WikiPageCell.swift */; };
 		24E679641C97256C00E7B87A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E679631C97256C00E7B87A /* AppDelegate.swift */; };
-		24E679661C97256C00E7B87A /* WikiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E679651C97256C00E7B87A /* WikiListViewController.swift */; };
-		24E679681C97256C00E7B87A /* WikiPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E679671C97256C00E7B87A /* WikiPageViewController.swift */; };
 		24E6796B1C97256C00E7B87A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E679691C97256C00E7B87A /* Main.storyboard */; };
 		24E6796D1C97256C00E7B87A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E6796C1C97256C00E7B87A /* Assets.xcassets */; };
 		24E679701C97256C00E7B87A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E6796E1C97256C00E7B87A /* LaunchScreen.storyboard */; };
@@ -18,10 +21,13 @@
 
 /* Begin PBXFileReference section */
 		247B2DD41C9824A900FDE06C /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		247B2DD81C983F0F00FDE06C /* WikiListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiListViewController.swift; sourceTree = "<group>"; };
+		247B2DD91C983F0F00FDE06C /* WikiPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiPageViewController.swift; sourceTree = "<group>"; };
+		247B2DDF1C983F8A00FDE06C /* WikiPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiPage.swift; sourceTree = "<group>"; };
+		247B2DE41C9841AD00FDE06C /* WikiPagesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiPagesDataSource.swift; sourceTree = "<group>"; };
+		247B2DE81C985F4E00FDE06C /* WikiPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiPageCell.swift; sourceTree = "<group>"; };
 		24E679601C97256C00E7B87A /* Wikipedia Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wikipedia Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E679631C97256C00E7B87A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24E679651C97256C00E7B87A /* WikiListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListViewController.swift; sourceTree = "<group>"; };
-		24E679671C97256C00E7B87A /* WikiPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPageViewController.swift; sourceTree = "<group>"; };
 		24E6796A1C97256C00E7B87A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24E6796C1C97256C00E7B87A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24E6796F1C97256C00E7B87A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +45,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		247B2DD61C983EF100FDE06C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				247B2DD81C983F0F00FDE06C /* WikiListViewController.swift */,
+				247B2DD91C983F0F00FDE06C /* WikiPageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		247B2DD71C983EF100FDE06C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				247B2DDE1C983F7100FDE06C /* Entities */,
+				247B2DE31C9841AD00FDE06C /* DataSources */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		247B2DDC1C983F1D00FDE06C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24E679631C97256C00E7B87A /* AppDelegate.swift */,
+				247B2DD41C9824A900FDE06C /* Helpers.swift */,
+				24E679711C97256C00E7B87A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		247B2DDD1C983F3800FDE06C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24E679691C97256C00E7B87A /* Main.storyboard */,
+				24E6796E1C97256C00E7B87A /* LaunchScreen.storyboard */,
+				24E6796C1C97256C00E7B87A /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		247B2DDE1C983F7100FDE06C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				247B2DDF1C983F8A00FDE06C /* WikiPage.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		247B2DE31C9841AD00FDE06C /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				247B2DE41C9841AD00FDE06C /* WikiPagesDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		247B2DE61C985F2B00FDE06C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				247B2DE71C985F2B00FDE06C /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		247B2DE71C985F2B00FDE06C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				247B2DE81C985F4E00FDE06C /* WikiPageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		24E679571C97256C00E7B87A = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +134,11 @@
 		24E679621C97256C00E7B87A /* Wikipedia Reader */ = {
 			isa = PBXGroup;
 			children = (
-				24E679631C97256C00E7B87A /* AppDelegate.swift */,
-				24E679651C97256C00E7B87A /* WikiListViewController.swift */,
-				24E679671C97256C00E7B87A /* WikiPageViewController.swift */,
-				24E679691C97256C00E7B87A /* Main.storyboard */,
-				24E6796E1C97256C00E7B87A /* LaunchScreen.storyboard */,
-				247B2DD41C9824A900FDE06C /* Helpers.swift */,
-				24E6796C1C97256C00E7B87A /* Assets.xcassets */,
-				24E679711C97256C00E7B87A /* Info.plist */,
+				247B2DD71C983EF100FDE06C /* Model */,
+				247B2DE61C985F2B00FDE06C /* Views */,
+				247B2DD61C983EF100FDE06C /* Controllers */,
+				247B2DDD1C983F3800FDE06C /* Resources */,
+				247B2DDC1C983F1D00FDE06C /* Supporting Files */,
 			);
 			path = "Wikipedia Reader";
 			sourceTree = "<group>";
@@ -141,10 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E679681C97256C00E7B87A /* WikiPageViewController.swift in Sources */,
-				24E679661C97256C00E7B87A /* WikiListViewController.swift in Sources */,
 				24E679641C97256C00E7B87A /* AppDelegate.swift in Sources */,
 				247B2DD51C9824A900FDE06C /* Helpers.swift in Sources */,
+				247B2DDA1C983F0F00FDE06C /* WikiListViewController.swift in Sources */,
+				247B2DE51C9841AD00FDE06C /* WikiPagesDataSource.swift in Sources */,
+				247B2DE91C985F4E00FDE06C /* WikiPageCell.swift in Sources */,
+				247B2DE01C983F8A00FDE06C /* WikiPage.swift in Sources */,
+				247B2DDB1C983F0F00FDE06C /* WikiPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

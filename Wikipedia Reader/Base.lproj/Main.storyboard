@@ -58,14 +58,20 @@
                                     <barButtonItem systemItem="action" id="IKd-Bz-C0a">
                                         <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="shareButtonTouchUpInside:" destination="JEX-9P-axG" id="z7f-jM-gOZ"/>
+                                            <action selector="shareButtonTouchUpInside:" destination="JEX-9P-axG" id="K5e-ic-ep3"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="vY3-ag-ZHn"/>
                                     <barButtonItem image="heart" id="e16-Ro-hHB">
                                         <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="likeButtonTouchUpInside:" destination="JEX-9P-axG" id="tbX-ml-h66"/>
+                                            <action selector="likeButtonTouchUpInside:" destination="JEX-9P-axG" id="5Dz-SB-Mib"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="ldE-nM-pI0"/>
+                                    <barButtonItem systemItem="organize" id="HAT-Uv-Uc2">
+                                        <connections>
+                                            <action selector="storeForOfflineTouchUpInside:" destination="JEX-9P-axG" id="DOW-nq-DIm"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dcg-fL-b3C"/>
@@ -144,8 +150,9 @@
                         <outlet property="activityIndicator" destination="M8F-QY-XoT" id="9rI-pZ-JJy"/>
                         <outlet property="backWebViewButton" destination="b5J-aN-wKf" id="iyW-Yk-NP9"/>
                         <outlet property="forwardWebViewButton" destination="n8Q-KY-jOR" id="OVU-kj-0pE"/>
-                        <outlet property="likeButton" destination="e16-Ro-hHB" id="UF7-mM-B3u"/>
-                        <outlet property="shareButton" destination="IKd-Bz-C0a" id="T3t-0r-NXs"/>
+                        <outlet property="likeButton" destination="e16-Ro-hHB" id="E2e-bm-fuh"/>
+                        <outlet property="shareButton" destination="IKd-Bz-C0a" id="OIS-Nu-vAx"/>
+                        <outlet property="storeForOfflienButton" destination="HAT-Uv-Uc2" id="F7Q-wR-LzE"/>
                         <outlet property="webView" destination="PWs-Gd-I2Z" id="wn0-NR-wUJ"/>
                     </connections>
                 </viewController>
@@ -176,24 +183,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="WikiPageCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WikiPageCell" id="WCw-Qf-5nD" customClass="WikiPageCell" customModule="Wikipedia_Reader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU4-iB-fbs">
+                                            <rect key="frame" x="8" y="11" width="546" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stored" translatesAutoresizingMaskIntoConstraints="NO" id="eRn-Bp-fSl">
+                                            <rect key="frame" x="562" y="7" width="30" height="30"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="5iF-7M-jWI"/>
+                                                <constraint firstAttribute="height" constant="30" id="UnB-xn-8J5"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="xU4-iB-fbs" secondAttribute="bottom" constant="11" id="0ob-3T-gDv"/>
+                                        <constraint firstItem="xU4-iB-fbs" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" constant="11" id="5Li-QG-tU0"/>
+                                        <constraint firstItem="eRn-Bp-fSl" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="GjK-OJ-lCt"/>
+                                        <constraint firstItem="xU4-iB-fbs" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="8" id="KaX-lg-lST"/>
+                                        <constraint firstItem="eRn-Bp-fSl" firstAttribute="leading" secondItem="xU4-iB-fbs" secondAttribute="trailing" constant="8" id="SJ2-we-qnV"/>
+                                        <constraint firstAttribute="trailing" secondItem="eRn-Bp-fSl" secondAttribute="trailing" constant="8" id="j49-LN-e5Y"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="storedForOffline" destination="eRn-Bp-fSl" id="Xgp-aS-q6N"/>
+                                    <outlet property="titleLabel" destination="xU4-iB-fbs" id="xNB-jE-8Gx"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -205,6 +229,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="List" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <outlet property="tableView" destination="r7i-6Z-zg0" id="5Ga-K5-1E5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,9 +255,10 @@
     </scenes>
     <resources>
         <image name="heart" width="33" height="33"/>
+        <image name="stored" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
