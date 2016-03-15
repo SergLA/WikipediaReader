@@ -38,4 +38,5 @@ class WikiPage: NSObject, NSCoding
         aCoder.encodeObject(self.url, forKey: "url")
         aCoder.encodeObject(self.htmlString, forKey: "htmlString")
     }
+    
 }

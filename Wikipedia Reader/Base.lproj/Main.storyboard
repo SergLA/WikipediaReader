@@ -54,27 +54,28 @@
                                     <constraint firstAttribute="height" constant="44" id="9oB-JL-dAi"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dJu-wL-mFQ"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="dJu-wL-mFQ"/>
                                     <barButtonItem systemItem="action" id="IKd-Bz-C0a">
                                         <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="shareButtonTouchUpInside:" destination="JEX-9P-axG" id="K5e-ic-ep3"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="vY3-ag-ZHn"/>
+                                    <barButtonItem width="10" systemItem="fixedSpace" id="vY3-ag-ZHn"/>
                                     <barButtonItem image="heart" id="e16-Ro-hHB">
                                         <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="likeButtonTouchUpInside:" destination="JEX-9P-axG" id="5Dz-SB-Mib"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="ldE-nM-pI0"/>
-                                    <barButtonItem systemItem="organize" id="HAT-Uv-Uc2">
+                                    <barButtonItem width="10" systemItem="fixedSpace" id="ldE-nM-pI0"/>
+                                    <barButtonItem image="stored" id="HAT-Uv-Uc2">
+                                        <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="storeForOfflineTouchUpInside:" destination="JEX-9P-axG" id="DOW-nq-DIm"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dcg-fL-b3C"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="dcg-fL-b3C"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -97,10 +98,10 @@
                             <barButtonItem title="New" id="QbE-hC-OhL">
                                 <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="refreshTouchUpInside:" destination="JEX-9P-axG" id="06q-CY-S2Z"/>
+                                    <action selector="NewWikiPageTouchUpInside:" destination="JEX-9P-axG" id="bIw-0k-MdP"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="cCT-4D-L2p">
+                            <barButtonItem id="cCT-4D-L2p">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n8Q-KY-jOR">
                                     <rect key="frame" x="507" y="7" width="30" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,7 +123,7 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="yuv-h2-329">
+                            <barButtonItem id="yuv-h2-329">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b5J-aN-wKf">
                                     <rect key="frame" x="469" y="7" width="30" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -191,7 +192,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU4-iB-fbs">
-                                            <rect key="frame" x="8" y="11" width="546" height="21"/>
+                                            <rect key="frame" x="15" y="11" width="539" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -209,16 +210,16 @@
                                         <constraint firstAttribute="bottom" secondItem="xU4-iB-fbs" secondAttribute="bottom" constant="11" id="0ob-3T-gDv"/>
                                         <constraint firstItem="xU4-iB-fbs" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" constant="11" id="5Li-QG-tU0"/>
                                         <constraint firstItem="eRn-Bp-fSl" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="GjK-OJ-lCt"/>
-                                        <constraint firstItem="xU4-iB-fbs" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="8" id="KaX-lg-lST"/>
+                                        <constraint firstItem="xU4-iB-fbs" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="15" id="KaX-lg-lST"/>
                                         <constraint firstItem="eRn-Bp-fSl" firstAttribute="leading" secondItem="xU4-iB-fbs" secondAttribute="trailing" constant="8" id="SJ2-we-qnV"/>
                                         <constraint firstAttribute="trailing" secondItem="eRn-Bp-fSl" secondAttribute="trailing" constant="8" id="j49-LN-e5Y"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="storedForOffline" destination="eRn-Bp-fSl" id="Xgp-aS-q6N"/>
                                     <outlet property="titleLabel" destination="xU4-iB-fbs" id="xNB-jE-8Gx"/>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -231,6 +232,7 @@
                     <navigationItem key="navigationItem" title="List" id="Zdf-7t-Un8"/>
                     <connections>
                         <outlet property="tableView" destination="r7i-6Z-zg0" id="5Ga-K5-1E5"/>
+                        <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="kbD-bQ-66p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -258,7 +260,7 @@
         <image name="stored" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="kbD-bQ-66p"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1019607843" green="0.2901960784" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

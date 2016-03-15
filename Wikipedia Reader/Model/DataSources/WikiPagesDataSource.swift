@@ -82,4 +82,5 @@ class WikiPagesDataSource: NSObject
     {
         NSKeyedArchiver.archiveRootObject(self.pages, toFile: self.fileName())
     }
+    
 }

@@ -6,12 +6,12 @@
 //  Copyright © 2016 Home. All rights reserved.
 //
 
+
 import UIKit
 
-class WikiListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+
+class WikiListViewController: UITableViewController
 {
-    @IBOutlet var tableView: UITableView!
-    
     var detailViewController: WikiPageViewController? = nil
     
     private var selectedIndexPath: NSIndexPath? = nil
@@ -20,10 +20,10 @@ class WikiListViewController: UIViewController, UITableViewDataSource, UITableVi
     {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        let addButton = UIBarButtonItem(title: "New", style: .Plain, target: self, action: "newWikiPageTouchUpInside:")
+        
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController
         {
@@ -41,16 +41,21 @@ class WikiListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewWillAppear(animated: Bool)
     {
-        //self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
     }
 
     
     // MARK: Actions handlers
     
-    func insertNewObject(sender: AnyObject)
+    func newWikiPageTouchUpInside(sender: UIBarButtonItem)
     {
         self.selectedIndexPath = nil
+        if let currentSelection = self.tableView.indexPathForSelectedRow
+        {
+            self.tableView.deselectRowAtIndexPath(currentSelection, animated: true)
+        }
+        
         self.performSegueWithIdentifier("showDetail", sender: self)
     }
     
@@ -75,26 +80,19 @@ class WikiListViewController: UIViewController, UITableViewDataSource, UITableVi
                 let page = WikiPagesDataSource.dataSource.pages[indexPath.row]
             
                 controller.wikiPage = page
-                //controller.wikiURL = page.url
-                //controller.wikiPageHTMLString = page.htmlString
             }
         }
     }
 
     
-    // MARK: - UITableViewDataSource
+    // MARK: - Table View
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return 1
-    }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return WikiPagesDataSource.dataSource.pages.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier(WikiPageCell.identifier, forIndexPath: indexPath) as! WikiPageCell
 
@@ -103,28 +101,23 @@ class WikiListViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
     {
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
         if editingStyle == .Delete
         {
             WikiPagesDataSource.dataSource.removeAtIndex(indexPath.row)
-            //
-            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
 
-    
-    // MARK: UITableViewDelegate
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         self.selectedIndexPath = indexPath
+        self.performSegueWithIdentifier("showDetail", sender: self)
     }
-
+    
 }
-

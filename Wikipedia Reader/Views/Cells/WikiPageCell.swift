@@ -40,4 +40,5 @@ class WikiPageCell: UITableViewCell
             self.storedForOffline.hidden = false
         }
     }
+    
 }

@@ -22,26 +22,10 @@ class WikiPageViewController: UIViewController, UIWebViewDelegate
     @IBOutlet weak var storeForOfflienButton: UIBarButtonItem!
     
     var wikiPage: WikiPage?
-    {
-        didSet
-        {
-            self.startWikiPageLoading()
-        }
-    }
-    
-//    var wikiURL: NSURL?
 //    {
 //        didSet
 //        {
-//            self.startWikiPageLoading()
-//        }
-//    }
-//    
-//    var wikiPageHTMLString: String?
-//    {
-//        didSet
-//        {
-//            self.startWikiPageLoading()
+//            
 //        }
 //    }
     
@@ -59,6 +43,13 @@ class WikiPageViewController: UIViewController, UIWebViewDelegate
     deinit
     {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.startWikiPageLoading()
     }
 
     
@@ -101,7 +92,8 @@ class WikiPageViewController: UIViewController, UIWebViewDelegate
         self.forwardWebViewButton.enabled = self.webView.canGoForward
         
         self.likeButton.image = (self.wikiPage == nil) ? UIImage(named: "heart") : UIImage(named: "heart_fill")
-        self.storeForOfflienButton.image = (self.wikiPage?.htmlString?.characters.count == 0) ? UIImage(named: "stored") : UIImage(named: "stored_fill")
+        let isStored = (self.wikiPage?.htmlString != nil) && (self.wikiPage?.htmlString?.characters.count > 0)
+        self.storeForOfflienButton.image = (isStored) ? UIImage(named: "stored_fill") : UIImage(named: "stored")
     }
     
     func showMessage(message: String)
@@ -122,8 +114,9 @@ class WikiPageViewController: UIViewController, UIWebViewDelegate
         self.updateUI()
     }
     
-    @IBAction func refreshTouchUpInside(sender: UIBarButtonItem)
+    @IBAction func NewWikiPageTouchUpInside(sender: UIBarButtonItem)
     {
+        self.wikiPage = nil
         self.startWikiPageLoading()
     }
     
@@ -219,5 +212,5 @@ class WikiPageViewController: UIViewController, UIWebViewDelegate
         
         self.webViewDidFinishLoad(webView)
     }
+    
 }
-
